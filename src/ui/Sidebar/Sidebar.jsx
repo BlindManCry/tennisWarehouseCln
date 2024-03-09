@@ -28,6 +28,34 @@ function Sidebar() {
         <p className="font-bold">Team Orders </p>
         <p className="font-bold">Pro Player Gear</p>
       </div>
+
+      <div className="flex flex-col mt-6 gap-1">
+        <p className="text-sm cursor-pointer hover:underline">Reviews</p>
+        <p className="text-sm cursor-pointer hover:underline">
+          Learning Center
+        </p>
+        <p className="text-sm cursor-pointer hover:underline">Improve</p>
+        <p className="text-sm cursor-pointer hover:underline">Message Board</p>
+        <p className="text-sm cursor-pointer hover:underline">Podcast</p>
+      </div>
+
+      <hr className="mt-4 w-full h-[2px] bg-gray-400" />
+
+      <div className="flex flex-col mt-4">
+        <p className="text-sm cursor-pointer hover:underline">Clearance</p>
+      </div>
+
+      <hr className="mt-4 w-full h-[1px] bg-gray-400" />
+
+      <div className="felx flex-col mt-4 gap-1">
+        <p className="text-sm cursor-pointer hover:underline">Wish List</p>
+        <p className="text-sm cursor-pointer hover:underline">Gift Cards</p>
+        <p className="text-sm cursor-pointer hover:underline">Support</p>
+        <p className="text-sm cursor-pointer hover:underline">Account Login</p>
+        <p className="text-sm cursor-pointer hover:underline">Mailing List</p>
+      </div>
+
+      <hr className="mt-4 w-full h-[2px] bg-gray-400 mb-4" />
     </div>
   );
 }

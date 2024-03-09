@@ -7,10 +7,10 @@ function AppLayout() {
     <div>
       <Header />
       <div className="flex w-[90%] m-auto">
-        <di className="w-[25%]">
+        <di className="w-[15%]">
           <Sidebar />
         </di>
-        <div className="w-[75%]">
+        <div className="w-[85%]">
           <Hero />
         </div>
       </div>
