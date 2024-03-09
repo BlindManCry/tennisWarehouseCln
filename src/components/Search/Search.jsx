@@ -1,7 +1,6 @@
 function Search() {
   return (
     <div className="mt-4 pb-5 border-b-[1px] border-gray-300">
-      <p>sdw</p>
       <div className="flex w-[90%]  justify-between m-auto items-center">
         <p className="font-bold border-b-[1px] border-orange-600 py-1">Shop</p>
         <p>Improve</p>
