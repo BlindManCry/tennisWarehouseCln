@@ -23,7 +23,7 @@ function Sidebar() {
           Shop By Brand
         </button>
       </div>
-      yle!!!
+      yle!!! nabozari jokovici magaria nnnnnnnnnnnn
       <div className="flex flex-col mt-6 gap-5 mb-4 justify-center">
         {categories.map((category, index) => {
           return (
