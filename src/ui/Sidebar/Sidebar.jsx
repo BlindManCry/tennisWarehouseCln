@@ -24,7 +24,7 @@ function Sidebar() {
         </button>
       </div>
       yle!!!
-      <div className="flex flex-col mt-6 gap-5 mb-4">
+      <div className="flex flex-col mt-6 gap-5 mb-4 justify-center">
         {categories.map((category, index) => {
           return (
             <div key={category.id}>
