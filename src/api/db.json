@@ -1,0 +1,153 @@
+{
+  "categories": [
+    {
+      "name": "Tennis Racquets",
+      "subcategories": [
+        "Shop All",
+        "Babolat",
+        "Wilson",
+        "Head",
+        "Prince",
+        "Yonex",
+        "Volkl",
+        "Dunlop",
+        "Tecnifibre",
+        "ProKannex"
+      ]
+    },
+    {
+      "name": "Junior Store",
+      "subcategories": [
+        "Shop All",
+        "Babolat",
+        "Wilson",
+        "Head",
+        "Prince",
+        "Yonex",
+        "Volkl",
+        "Dunlop",
+        "Tecnifibre",
+        "ProKannex"
+      ]
+    },
+    {
+      "name": "Men's Apparel",
+      "subcategories": ["T-Shirts", "Pants", "Jackets", "Hats", "Accessories"]
+    },
+    {
+      "name": "Women's Apparel",
+      "subcategories": [
+        "T-Shirts",
+        "Dresses",
+        "Leggings",
+        "Hats",
+        "Accessories"
+      ]
+    },
+    {
+      "name": "Socks",
+      "subcategories": [
+        "Ankle Socks",
+        "Crew Socks",
+        "Compression Socks",
+        "Sport Socks"
+      ]
+    },
+    {
+      "name": "Other Apparel",
+      "subcategories": ["Hoodies", "Shorts", "Sweatshirts", "Gloves", "Scarves"]
+    },
+    {
+      "name": "Men's Shoes",
+      "subcategories": [
+        "Running Shoes",
+        "Tennis Shoes",
+        "Casual Shoes",
+        "Sandals",
+        "Boots"
+      ]
+    },
+    {
+      "name": "Women's Shoes",
+      "subcategories": [
+        "Running Shoes",
+        "Tennis Shoes",
+        "Flats",
+        "Sandals",
+        "Boots"
+      ]
+    },
+    {
+      "name": "Tennis Balls",
+      "subcategories": [
+        "Standard Balls",
+        "High-Altitude Balls",
+        "Practice Balls",
+        "Colored Balls"
+      ]
+    },
+    {
+      "name": "Tennis Bags",
+      "subcategories": [
+        "Backpacks",
+        "Duffel Bags",
+        "Racquet Bags",
+        "Tote Bags",
+        "Travel Bags"
+      ]
+    },
+    {
+      "name": "Strings & Stringing",
+      "subcategories": [
+        "Synthetic Gut",
+        "Polyester",
+        "Natural Gut",
+        "Hybrid Strings",
+        "Stringing Machines"
+      ]
+    },
+    {
+      "name": "Grips & Accessories",
+      "subcategories": [
+        "Overgrips",
+        "Replacement Grips",
+        "Vibration Dampeners",
+        "Grip Enhancers"
+      ]
+    },
+    {
+      "name": "Other Items",
+      "subcategories": [
+        "Tennis Towels",
+        "Water Bottles",
+        "Sunscreen",
+        "Injury Supports"
+      ]
+    },
+    {
+      "name": "Gifts & Novelty Items",
+      "subcategories": [
+        "Tennis-themed Gifts",
+        "Novelty Keychains",
+        "Funny Tennis Socks",
+        "Gift Cards"
+      ]
+    },
+    {
+      "name": "Team Orders",
+      "subcategories": [
+        "Custom Team Apparel",
+        "Team Equipment Bundles",
+        "Logo Design Services"
+      ]
+    },
+    {
+      "name": "Pro Player Gear",
+      "subcategories": [
+        "Player Signature Racquets",
+        "Autographed Memorabilia",
+        "Exclusive Player Merchandise"
+      ]
+    }
+  ]
+}

@@ -1,4 +1,17 @@
+import { useEffect, useState } from "react";
+
 function Sidebar() {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(function () {
+    async function fetchCategories() {
+      const res = await fetch("http://localhost:3000/categories");
+      const data = await res.json();
+      setCategories(data);
+    }
+    fetchCategories();
+  }, []);
+
   return (
     <div className="flex flex-col items-start mt-7">
       <div className="flex flex-col gap-4">
@@ -10,52 +23,29 @@ function Sidebar() {
         </button>
       </div>
 
-      <div className="flex flex-col mt-6 gap-5">
-        <p className="font-bold">Tennis Racquets</p>
-        <p className="font-bold">Junior Store</p>
-        <p className="font-bold">Men's Apparel</p>
-        <p className="font-bold">Women's Apparel</p>
-        <p className="font-bold">Socks</p>
-        <p className="font-bold">Other Apparel</p>
-        <p className="font-bold">Men's Shoes</p>
-        <p className="font-bold">Women's Shoes</p>
-        <p className="font-bold">Tennis Balls</p>
-        <p className="font-bold">Tennis Bags</p>
-        <p className="font-bold">Strings & Stringing</p>
-        <p className="font-bold">Grips & Accessories </p>
-        <p className="font-bold">Other Items</p>
-        <p className="font-bold">Gifts & Novelty Items</p>
-        <p className="font-bold">Team Orders </p>
-        <p className="font-bold">Pro Player Gear</p>
+      <div className="flex flex-col mt-6 gap-5 mb-4">
+        {categories.map((category, index) => {
+          return (
+            <div key={category.id}>
+              <p className="font-bold  cursor-pointer hover:underline">
+                {category.name}
+              </p>
+              <div className="flex flex-col pl-4">
+                {category.subcategories.map((item, index) => {
+                  return (
+                    <p
+                      key={index}
+                      className="text-[12px] text-gray-500 cursor-pointer hover:text-[black] hover:underline"
+                    >
+                      {item}
+                    </p>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })}
       </div>
-
-      <div className="flex flex-col mt-6 gap-1">
-        <p className="text-sm cursor-pointer hover:underline">Reviews</p>
-        <p className="text-sm cursor-pointer hover:underline">
-          Learning Center
-        </p>
-        <p className="text-sm cursor-pointer hover:underline">Improve</p>
-        <p className="text-sm cursor-pointer hover:underline">Message Board</p>
-        <p className="text-sm cursor-pointer hover:underline">Podcast</p>
-      </div>
-
-      <hr className="mt-4 w-full h-[2px] bg-gray-400" />
-
-      <div className="flex flex-col mt-4">
-        <p className="text-sm cursor-pointer hover:underline">Clearance</p>
-      </div>
-
-      <hr className="mt-4 w-full h-[1px] bg-gray-400" />
-
-      <div className="felx flex-col mt-4 gap-1">
-        <p className="text-sm cursor-pointer hover:underline">Wish List</p>
-        <p className="text-sm cursor-pointer hover:underline">Gift Cards</p>
-        <p className="text-sm cursor-pointer hover:underline">Support</p>
-        <p className="text-sm cursor-pointer hover:underline">Account Login</p>
-        <p className="text-sm cursor-pointer hover:underline">Mailing List</p>
-      </div>
-
-      <hr className="mt-4 w-full h-[2px] bg-gray-400 mb-4" />
     </div>
   );
 }
