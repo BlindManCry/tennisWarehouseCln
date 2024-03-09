@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 function Sidebar() {
   const [categories, setCategories] = useState([]);
+  const [activeCategory, setActiveCategoty] = useState("");
 
   useEffect(function () {
     async function fetchCategories() {
@@ -27,21 +28,30 @@ function Sidebar() {
         {categories.map((category, index) => {
           return (
             <div key={category.id}>
-              <p className="font-bold  cursor-pointer hover:underline">
+              <p
+                className="font-bold  cursor-pointer hover:underline"
+                onClick={() =>
+                  setActiveCategoty((cat) =>
+                    cat === category.name ? "" : category.name
+                  )
+                }
+              >
                 {category.name}
               </p>
-              <div className="flex flex-col pl-4">
-                {category.subcategories.map((item, index) => {
-                  return (
-                    <p
-                      key={index}
-                      className="text-[12px] text-gray-500 cursor-pointer hover:text-[black] hover:underline"
-                    >
-                      {item}
-                    </p>
-                  );
-                })}
-              </div>
+              {activeCategory === category.name && (
+                <div className="flex flex-col pl-4">
+                  {category.subcategories.map((item, index) => {
+                    return (
+                      <p
+                        key={index}
+                        className="text-[12px] text-gray-500 cursor-pointer hover:text-[black] hover:underline"
+                      >
+                        {item}
+                      </p>
+                    );
+                  })}
+                </div>
+              )}
             </div>
           );
         })}
