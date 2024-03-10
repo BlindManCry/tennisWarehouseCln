@@ -56,7 +56,6 @@ function Sidebar() {
           );
         })}
       </div>
-      <p className="yle">SASHA SHEN SHEGECI</p>
     </div>
   );
 }
