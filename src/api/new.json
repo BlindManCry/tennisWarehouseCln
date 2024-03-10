@@ -3,6 +3,8 @@
     {
       "id": 1,
       "image": "https://img.tennis-warehouse.com/watermark/rs.php?path=AMR9SAB-1.jpg&nw=224",
+      "imageWidth": 210,
+      "imageHeight": 157,
       "state": "new",
       "title": "Asics Gel Resolution 9 Sapphire/Black Men's Shoes",
       "oldPrice": 144.95,
@@ -11,6 +13,8 @@
     {
       "id": 2,
       "image": "https://img.tennis-warehouse.com/watermark/rs.php?path=PSRKT-thumb.jpg&nw=128",
+      "imageWidth": 120,
+      "imageHeight": 278,
       "state": "new",
       "title": "Babolat Pure Strike 98 16x19",
       "oldPrice": null,
@@ -19,6 +23,8 @@
     {
       "id": 3,
       "image": "https://img.tennis-warehouse.com/watermark/rs.php?path=NBC1WPD-1.jpg&nw=224",
+      "imageWidth": 210,
+      "imageHeight": 157,
       "state": "new",
       "title": "New Balance Coco CG1 Wh/Blue/Yellow Unisex Tennis Shoe",
       "oldPrice": null,
@@ -27,22 +33,19 @@
     {
       "id": 4,
       "image": "https://img.tennis-warehouse.com/watermark/rs.php?path=PLEG2-thumb.jpg&nw=128",
+      "imageWidth": 120,
+      "imageHeight": 278,
       "state": "new",
       "title": "Prince O3 Legacy 120",
       "oldPrice": null,
       "newPrice": 199
     },
-    {
-      "id": 5,
-      "image": "https://img.tennis-warehouse.com/watermark/rs.php?path=MMW610A-1.jpg&nw=224",
-      "state": "new",
-      "title": "Mizuno Wave Exceed Tour 6 10th Anniv Men's Shoes",
-      "oldPrice": 145,
-      "newPrice": 139.95
-    },
+
     {
       "id": 6,
       "image": "https://img.tennis-warehouse.com/watermark/rs.php?path=MMW610A-1.jpg&nw=224",
+      "imageWidth": 210,
+      "imageHeight": 157,
       "state": "new",
       "title": "Mizuno Wave Exceed Tour 6 10th Anniv Men's Shoes",
       "oldPrice": 145,
@@ -51,6 +54,8 @@
     {
       "id": 7,
       "image": "https://img.tennis-warehouse.com/watermark/rs.php?path=HSBPXXL-1.jpg&nw=224",
+      "imageWidth": 210,
+      "imageHeight": 280,
       "state": "new",
       "title": "Head Pro X Racquet Bag XL Thyme/Black",
       "oldPrice": null,
@@ -59,6 +64,8 @@
     {
       "id": 8,
       "image": "https://img.tennis-warehouse.com/watermark/rs.php?path=VMSVTJ-GY-1.jpg&nw=224",
+      "imageWidth": 210,
+      "imageHeight": 280,
       "state": "new",
       "title": "Vuori Men's Spring Venture Track Jacket",
       "oldPrice": null,
@@ -67,6 +74,8 @@
     {
       "id": 9,
       "image": "https://img.tennis-warehouse.com/watermark/rs.php?path=AWS3PMB-1.jpg&nw=224",
+      "imageWidth": 210,
+      "imageHeight": 157,
       "state": "new",
       "title": "Asics Solution Speed FF 3 Mint/Blue Women's Shoes",
       "oldPrice": 140,
@@ -75,6 +84,8 @@
     {
       "id": 10,
       "image": "https://img.tennis-warehouse.com/watermark/rs.php?path=SHGR16-1.jpg&nw=224",
+      "imageWidth": 210,
+      "imageHeight": 280,
       "state": "new",
       "title": "Sergio Tacchini Men's Monda T-Shirt",
       "oldPrice": null,
@@ -83,6 +94,8 @@
     {
       "id": 11,
       "image": "https://img.tennis-warehouse.com/watermark/rs.php?path=STMSMOT-NV-1.jpg&nw=224",
+      "imageWidth": 210,
+      "imageHeight": 280,
       "state": "new",
       "title": "Sergio Tacchini Men's Monda T-Shirt",
       "oldPrice": null,
@@ -91,6 +104,8 @@
     {
       "id": 12,
       "image": "https://img.tennis-warehouse.com/watermark/rs.php?path=NMSOCT-BK-1.jpg&nw=224",
+      "imageWidth": 210,
+      "imageHeight": 280,
       "state": "new",
       "title": "Nike Men's Spring Heritage Court Top",
       "oldPrice": null,
@@ -99,6 +114,8 @@
     {
       "id": 13,
       "image": "https://img.tennis-warehouse.com/watermark/rs.php?path=NMSOCT-PU-1.jpg&nw=224",
+      "imageWidth": 210,
+      "imageHeight": 280,
       "state": "new",
       "title": "Nike Men's Spring Heritage Court Top",
       "oldPrice": null,
@@ -107,6 +124,8 @@
     {
       "id": 14,
       "image": "https://img.tennis-warehouse.com/watermark/rs.php?path=NMSOCT-GR-1.jpg&nw=224",
+      "imageWidth": 210,
+      "imageHeight": 280,
       "state": "new",
       "title": "Nike Men's Spring Heritage Court Top",
       "oldPrice": null,
@@ -115,6 +134,8 @@
     {
       "id": 15,
       "image": "https://img.tennis-warehouse.com/watermark/rs.php?path=NMSOCT-WH-1.jpg&nw=224",
+      "imageWidth": 210,
+      "imageHeight": 280,
       "state": "new",
       "title": "Nike Men's Spring Heritage Court Top",
       "oldPrice": null,
