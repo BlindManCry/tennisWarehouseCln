@@ -10,7 +10,7 @@ function Search() {
             className="w-[100%] py-2 pl-3 "
             placeholder="Search"
           />
-          <div className=" absolute top-[50%] translate-y-[-50%] right-3">
+          <div className=" absolute top-[50%] translate-y-[-50%] right-3 hover:cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
