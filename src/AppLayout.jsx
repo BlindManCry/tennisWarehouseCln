@@ -1,5 +1,5 @@
+import { Outlet } from "react-router-dom";
 import Header from "./ui/Header/Header";
-import Hero from "./ui/Hero/Hero";
 import Sidebar from "./ui/Sidebar/Sidebar";
 
 function AppLayout() {
@@ -11,7 +11,7 @@ function AppLayout() {
           <Sidebar />
         </div>
         <div className="w-[85%]">
-          <Hero />
+          <Outlet />
         </div>
       </div>
     </div>
