@@ -8,7 +8,6 @@ function DoorbesterHero() {
           </h2>
           <p className="text-center text-[#fff]">Head Speed Team L</p>
         </div>
-        <p>QRISTI</p>
       </div>
     </div>
   );

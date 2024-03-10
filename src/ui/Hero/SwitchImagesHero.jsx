@@ -4,6 +4,8 @@ function SwitchImagesHero() {
   const [activeImage, setActiveImage] = useState(0);
   const [pause, setPause] = useState(false);
 
+  // translate-x-[-${activeImage}%]
+
   useEffect(
     function () {
       if (activeImage > 200) setActiveImage(0);
@@ -24,7 +26,13 @@ function SwitchImagesHero() {
       <div className="flex mt-7 overflow-hidden">
         {/* FIRST IMAGE  */}
         <div
-          className={`relative cursor-pointer w-full min-w-full translate-x-[-${activeImage}%] transition-all duration-300`}
+          className={`relative cursor-pointer w-full min-w-full ${
+            activeImage === 0
+              ? "translate-x-[0%]"
+              : activeImage === 100
+              ? "translate-x-[-100%]"
+              : "translate-x-[-200%]"
+          } transition-all duration-300`}
         >
           <img
             src="https://img.tennis-warehouse.com/fpcache/1200/marketing/BOOM24FP3-lg.jpg"
@@ -46,7 +54,13 @@ function SwitchImagesHero() {
 
         {/* SECOND IMAGE  */}
         <div
-          className={`relative cursor-pointer w-full min-w-full translate-x-[-${activeImage}%] transition-all duration-300`}
+          className={`relative cursor-pointer w-full min-w-full ${
+            activeImage === 0
+              ? "translate-x-[0%]"
+              : activeImage === 100
+              ? "translate-x-[-100%]"
+              : "translate-x-[-200%]"
+          } transition-all duration-300`}
         >
           <img
             src="https://img.tennis-warehouse.com/fpcache/1200/marketing/ADIMARKFP2-lg.jpg"
@@ -76,7 +90,13 @@ function SwitchImagesHero() {
 
         {/* THIRD IMAGE  */}
         <div
-          className={`relative cursor-pointer w-full min-w-full translate-x-[-${activeImage}%] transition-all duration-300`}
+          className={`relative cursor-pointer w-full min-w-full ${
+            activeImage === 0
+              ? "translate-x-[0%]"
+              : activeImage === 100
+              ? "translate-x-[-100%]"
+              : "translate-x-[-200%]"
+          } transition-all duration-300`}
         >
           <img
             src="https://img.tennis-warehouse.com/fpcache/1200/marketing/241RPMFP1-lg.jpg"
