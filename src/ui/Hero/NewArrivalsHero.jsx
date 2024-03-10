@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useItems } from "../../Contexts/ItemsContext";
+import NewArrivalItem from "../../components/singleItemComponents/NewArrivalItem";
 
 function NewArrivalsHero() {
   useEffect(function () {});
@@ -7,9 +8,13 @@ function NewArrivalsHero() {
   console.log(newArrivalsData, arrivalsError, arrivalsLoading);
 
   return (
-    <div>
-      <h1>New Arrivals</h1>
-      <div></div>
+    <div className="w-[80%] mx-auto">
+      <h1 className="text-center text-[32px] font-bold">New Arrivals</h1>
+      <div className="flex w-[100%] overflow-hidden mx-auto items-center gap-4">
+        {newArrivalsData?.map((item) => (
+          <NewArrivalItem item={item} />
+        ))}
+      </div>
     </div>
   );
 }
