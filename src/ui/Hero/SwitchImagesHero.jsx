@@ -6,11 +6,11 @@ function SwitchImagesHero() {
 
   useEffect(
     function () {
-      if (activeImage > 2) setActiveImage(0);
+      if (activeImage > 200) setActiveImage(0);
 
       const imageInterval = setInterval(() => {
         if (!pause) {
-          setActiveImage((img) => img + 1);
+          setActiveImage((img) => img + 100);
         }
       }, 4000);
 
@@ -24,7 +24,7 @@ function SwitchImagesHero() {
       <div className="flex mt-7 overflow-hidden">
         {/* FIRST IMAGE  */}
         <div
-          className={`relative cursor-pointer w-full min-w-full translate-x-[-${activeImage}00%] transition-all duration-300`}
+          className={`relative cursor-pointer w-full min-w-full translate-x-[-${activeImage}%] transition-all duration-300`}
         >
           <img
             src="https://img.tennis-warehouse.com/fpcache/1200/marketing/BOOM24FP3-lg.jpg"
@@ -46,7 +46,7 @@ function SwitchImagesHero() {
 
         {/* SECOND IMAGE  */}
         <div
-          className={`relative cursor-pointer w-full min-w-full translate-x-[-${activeImage}00%] transition-all duration-300`}
+          className={`relative cursor-pointer w-full min-w-full translate-x-[-${activeImage}%] transition-all duration-300`}
         >
           <img
             src="https://img.tennis-warehouse.com/fpcache/1200/marketing/ADIMARKFP2-lg.jpg"
@@ -76,7 +76,7 @@ function SwitchImagesHero() {
 
         {/* THIRD IMAGE  */}
         <div
-          className={`relative cursor-pointer w-full min-w-full translate-x-[-${activeImage}00%] transition-all duration-300`}
+          className={`relative cursor-pointer w-full min-w-full translate-x-[-${activeImage}%] transition-all duration-300`}
         >
           <img
             src="https://img.tennis-warehouse.com/fpcache/1200/marketing/241RPMFP1-lg.jpg"
@@ -116,17 +116,17 @@ function SwitchImagesHero() {
         </p>
         <p
           className={`w-[32%] text-center  py-4 border-x-[1px] border-b-[1px] border-gray-300 ${
-            activeImage === 1 ? "border-b-orange-800 border-b-[2px]" : ""
+            activeImage === 100 ? "border-b-orange-800 border-b-[2px]" : ""
           }  cursor-pointer`}
-          onClick={() => setActiveImage(1)}
+          onClick={() => setActiveImage(100)}
         >
           New Markdowns 25% Off
         </p>
         <p
           className={`w-[32%] text-center  py-4 border-x-[1px] border-b-[1px] border-gray-300 ${
-            activeImage === 2 ? "border-b-orange-800 border-b-[2px]" : ""
+            activeImage === 200 ? "border-b-orange-800 border-b-[2px]" : ""
           }  cursor-pointer`}
-          onClick={() => setActiveImage(2)}
+          onClick={() => setActiveImage(200)}
         >
           Babolat String Sale Buy 2, Get 1 Free
         </p>
