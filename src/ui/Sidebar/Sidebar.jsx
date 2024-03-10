@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Sidebar() {
   const [categories, setCategories] = useState([]);
@@ -41,12 +42,13 @@ function Sidebar() {
                 <div className="flex flex-col pl-4">
                   {category.subcategories.map((item, index) => {
                     return (
-                      <p
+                      <Link
                         key={index}
                         className="text-[12px] text-gray-500 cursor-pointer hover:text-[black] hover:underline"
+                        to={`${item}RacketsOverview`}
                       >
                         {item}
-                      </p>
+                      </Link>
                     );
                   })}
                 </div>

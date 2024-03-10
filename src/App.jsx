@@ -1,6 +1,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import AppLayout from "./AppLayout";
 import Home from "./pages/Home/Home";
+import BabolatCategorieOverview from "./components/categoriesOverview/BabolatCategorieOverview";
 
 const router = createBrowserRouter([
   {
@@ -9,6 +10,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/BabolatRacketsOverview",
+        element: <BabolatCategorieOverview />,
       },
     ],
   },
