@@ -11,8 +11,8 @@ function NewArrivalsHero() {
     <div className="w-[80%] mx-auto">
       <h1 className="text-center text-[32px] font-bold">New Arrivals</h1>
       <div className="flex w-[100%] overflow-hidden mx-auto items-center gap-4">
-        {newArrivalsData?.map((item) => (
-          <NewArrivalItem item={item} />
+        {newArrivalsData?.map((item, index) => (
+          <NewArrivalItem key={index} item={item} index={index} />
         ))}
       </div>
     </div>
