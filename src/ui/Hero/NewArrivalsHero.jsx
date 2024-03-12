@@ -19,6 +19,7 @@ function NewArrivalsHero() {
   return (
     <div className="w-[90%] mx-auto relative">
       <h1 className="text-center text-[32px] font-bold">New Arrivals</h1>
+
       <svg
         onClick={handleTranslateBack}
         xmlns="http://www.w3.org/2000/svg"
@@ -54,6 +55,11 @@ function NewArrivalsHero() {
       >
         {newArrivalsData?.map((item) => (
           <NewArrivalItem item={item} translate={translate} />
+
+      <div className="flex w-[100%] overflow-hidden mx-auto items-center gap-4">
+        {newArrivalsData?.map((item, index) => (
+          <NewArrivalItem key={index} item={item} index={index} />
+
         ))}
       </div>
       11
