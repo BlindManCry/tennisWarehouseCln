@@ -110,7 +110,7 @@ function BabolatCategorieOverview() {
               babolat rackets and also have awesome stability for their weight.
             </p>
             <p
-              className={`mt-4 text-sm hover:border-b-[1px] border-black translate-x-[${translate}%] transition-all`}
+              className={`mt-4 text-sm hover:border-b-[1px] border-black transition-all`}
             >
               Shop Now
             </p>
