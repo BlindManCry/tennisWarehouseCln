@@ -1,6 +1,10 @@
-function NewArrivalItem({ item }) {
+function NewArrivalItem({ item, translate }) {
   return (
-    <div className="flex flex-col justify-end items-left min-w-[25%] border-2 h-[370px] p-2">
+    <div
+      className={`flex flex-col justify-end items-left min-w-[25%] border-2 h-[370px] p-2 translate-x-[${
+        4 * translate
+      }%] transition-all`}
+    >
       <img
         src={item.image}
         alt="item"
