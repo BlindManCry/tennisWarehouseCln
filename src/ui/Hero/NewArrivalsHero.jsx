@@ -6,8 +6,8 @@ function NewArrivalsHero() {
   const [translate, setTranslate] = useState(0);
 
   const { newArrivalsData } = useItems();
-  console.log(newArrivalsData);
   const arrLength = newArrivalsData?.length;
+  console.log(arrLength);
   function handleTranslateBack() {
     setTranslate((state) =>
       state === 0
