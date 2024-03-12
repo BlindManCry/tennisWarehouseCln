@@ -65,3 +65,29 @@ export function wrap_classnameHeight(index) {
     ? "h-[280px]"
     : "";
 }
+
+export function wrap_translateClassnameInBabolat(translate) {
+  return `translate-x-[${translate}%]`;
+}
+
+// export function wrap_translateClassnameInBabolat(translate) {
+//   return translate === 0
+//     ? "translate-x-0"
+//     : translate === 100
+//     ? "translate-x-[100%]"
+//     : translate === 200
+//     ? "translate-x-[200%]"
+//     : translate === 300
+//     ? "translate-x-[300%]"
+//     : translate === 400
+//     ? "translate-x-[400%]"
+//     : translate === -100
+//     ? "translate-x-[-100%]"
+//     : translate === -200
+//     ? "translate-x-[-200%]"
+//     : translate === -300
+//     ? "translate-x-[-300%]"
+//     : translate === -400
+//     ? "translate-x-[-400%]"
+//     : "";
+// }
