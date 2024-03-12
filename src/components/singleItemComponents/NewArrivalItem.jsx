@@ -1,6 +1,12 @@
-function NewArrivalItem({ item }) {
+import { wrap_translateClassnameInBabolat } from "../../helpers/classname";
+
+function NewArrivalItem({ item, translate }) {
   return (
-    <div className="w-[25%] min-w-[25%] px-3">
+    <div
+      className={`w-[25%] min-w-[25%] px-3 ${wrap_translateClassnameInBabolat(
+        translate
+      )}`}
+    >
       <div className="border-[1px] border-gray-300 hover:border-black cursor-pointer p-5">
         <img src={item.image} alt="" className=" ml-[50%] translate-x-[-50%]" />
         <div className="flex flex-col gap-2 mt-3">
