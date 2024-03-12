@@ -6,18 +6,23 @@ function NewArrivalsHero() {
   const [translate, setTranslate] = useState(0);
 
   const { newArrivalsData } = useItems();
-
-  const arrLength = newArrivalsData.length;
-
+  console.log(newArrivalsData);
+  const arrLength = newArrivalsData?.length;
   function handleTranslateBack() {
     setTranslate((state) =>
-      state === 0 ? Math.floor(arrLength / 4 - 1) : state + 400
+      state === 0
+        ? 400 *
+          -Math.floor(arrLength % 4 === 0 ? arrLength / 4 - 1 : arrLength / 4)
+        : state + 400
     );
   }
 
   function handleTranslateForward() {
     setTranslate((state) =>
-      state === Math.floor(arrLength / 4 - 1) * 400 ? 0 : state - 400
+      state ===
+      -Math.floor(arrLength % 4 === 0 ? arrLength / 4 - 1 : arrLength / 4) * 400
+        ? 0
+        : state - 400
     );
   }
 
@@ -60,7 +65,13 @@ function NewArrivalsHero() {
 
           <div className="flex overflow-hidden justify-between mt-8">
             {newArrivalsData?.map((item, index) => {
-              return <NewArrivalItem key={item.id} item={item} />;
+              return (
+                <NewArrivalItem
+                  key={item.id}
+                  item={item}
+                  translate={translate}
+                />
+              );
             })}
           </div>
         </div>
