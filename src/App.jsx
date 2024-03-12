@@ -2,6 +2,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import AppLayout from "./AppLayout";
 import Home from "./pages/Home/Home";
 import BabolatCategorieOverview from "./components/categoriesOverview/BabolatCategorieOverview";
+import Cart from "./pages/Cart/Cart";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
       {
         path: "/BabolatRacketsOverview",
         element: <BabolatCategorieOverview />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
   },
