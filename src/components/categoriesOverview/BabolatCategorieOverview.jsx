@@ -6,6 +6,7 @@ import racket4 from "../../images/rs3.webp";
 import racket5 from "../../images/rs4.webp";
 import racket6 from "../../images/rs5.webp";
 import racket7 from "../../images/rs6.webp";
+import { wrap_translateClassnameInBabolat } from "../../helpers/classname";
 
 function BabolatCategorieOverview() {
   const [translate, setTranslate] = useState(0);
@@ -23,7 +24,7 @@ function BabolatCategorieOverview() {
       <h1 className="text-[42px] text-center">Babolat Tennis Rackets</h1>
       <p className="text-[16px] text-center mt-3">
         To speak with a racquet specialist please call{" "}
-        <a href="#" className="text-blue-600 hover:border-b border-blue-600">
+        <a href="/" className="text-blue-600 hover:border-b border-blue-600">
           +44 (0) 844 4990807
         </a>
       </p>
@@ -88,7 +89,9 @@ function BabolatCategorieOverview() {
 
         <div className="w-[85%] mx-auto flex border-[2px] mt-[60px] py-3 overflow-hidden">
           <div
-            className={`flex flex-col items-center gap-4 hover:cursor-pointer border-r-[2px] min-w-[25%] translate-x-[${translate}%] transition-all`}
+            className={`flex flex-col items-center gap-4 hover:cursor-pointer border-r-[2px] min-w-[25%] ${wrap_translateClassnameInBabolat(
+              translate
+            )} transition-all`}
           >
             <img src={racket1} alt="racket" className="h-[280px]" />
             <p className="text-[19px] font-bold">Pure Strike</p>
@@ -101,7 +104,9 @@ function BabolatCategorieOverview() {
             </p>
           </div>
           <div
-            className={`flex flex-col items-center gap-4 hover:cursor-pointer border-r-[2px] min-w-[25%] translate-x-[${translate}%] transition-all`}
+            className={`flex flex-col items-center gap-4 hover:cursor-pointer border-r-[2px] min-w-[25%] ${wrap_translateClassnameInBabolat(
+              translate
+            )} transition-all`}
           >
             <img src={racket2} alt="racket" className="h-[280px]" />
             <p className="text-[19px] font-bold">Pure sStrike</p>
@@ -116,7 +121,9 @@ function BabolatCategorieOverview() {
             </p>
           </div>
           <div
-            className={`flex flex-col items-center gap-4 hover:cursor-pointer border-r-[2px] min-w-[25%] translate-x-[${translate}%] transition-all`}
+            className={`flex flex-col items-center gap-4 hover:cursor-pointer border-r-[2px] min-w-[25%] ${wrap_translateClassnameInBabolat(
+              translate
+            )} transition-all`}
           >
             <img src={racket3} alt="racket" className="h-[280px]" />
             <p className="text-[19px] font-bold">Pure Strike</p>
@@ -129,7 +136,9 @@ function BabolatCategorieOverview() {
             </p>
           </div>
           <div
-            className={`flex flex-col items-center gap-4 hover:cursor-pointer  min-w-[25%] translate-x-[${translate}%] transition-all`}
+            className={`flex flex-col items-center gap-4 hover:cursor-pointer  min-w-[25%] ${wrap_translateClassnameInBabolat(
+              translate
+            )} transition-all`}
           >
             <img src={racket4} alt="racket" className="h-[280px]" />
             <p className="text-[19px] font-bold">Pure Strike</p>
@@ -142,7 +151,9 @@ function BabolatCategorieOverview() {
             </p>
           </div>
           <div
-            className={`flex flex-col items-center gap-4 hover:cursor-pointer  min-w-[25%] translate-x-[${translate}%] transition-all`}
+            className={`flex flex-col items-center gap-4 hover:cursor-pointer  min-w-[25%] ${wrap_translateClassnameInBabolat(
+              translate
+            )} transition-all`}
           >
             <img src={racket5} alt="racket" className="h-[280px]" />
             <p className="text-[19px] font-bold">Pure Strike</p>
@@ -155,7 +166,9 @@ function BabolatCategorieOverview() {
             </p>
           </div>
           <div
-            className={`flex flex-col items-center gap-4 hover:cursor-pointer  min-w-[25%] translate-x-[${translate}%] transition-all`}
+            className={`flex flex-col items-center gap-4 hover:cursor-pointer  min-w-[25%] ${wrap_translateClassnameInBabolat(
+              translate
+            )} transition-all`}
           >
             <img src={racket6} alt="racket" className="h-[280px]" />
             <p className="text-[19px] font-bold">Pure Strike</p>
@@ -168,7 +181,9 @@ function BabolatCategorieOverview() {
             </p>
           </div>
           <div
-            className={`flex flex-col items-center gap-4 hover:cursor-pointer  min-w-[25%] translate-x-[${translate}%] transition-all`}
+            className={`flex flex-col items-center gap-4 hover:cursor-pointer  min-w-[25%] ${wrap_translateClassnameInBabolat(
+              translate
+            )} transition-all`}
           >
             <img src={racket7} alt="racket" className="h-[280px]" />
             <p className="text-[19px] font-bold">Pure Strike</p>
@@ -181,7 +196,9 @@ function BabolatCategorieOverview() {
             </p>
           </div>
           <div
-            className={`flex flex-col items-center gap-4 hover:cursor-pointer  min-w-[25%] translate-x-[${translate}%] transition-all`}
+            className={`flex flex-col items-center gap-4 hover:cursor-pointer  min-w-[25%] ${wrap_translateClassnameInBabolat(
+              translate
+            )} transition-all`}
           >
             <img src={racket3} alt="racket" className="h-[280px]" />
             <p className="text-[19px] font-bold">Pure Strike</p>
