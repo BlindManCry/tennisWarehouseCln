@@ -7,7 +7,7 @@ function NewArrivalsHero() {
 
   const { newArrivalsData } = useItems();
   const arrLength = newArrivalsData?.length;
-  console.log(arrLength);
+
   function handleTranslateBack() {
     setTranslate((state) =>
       state === 0
@@ -26,6 +26,13 @@ function NewArrivalsHero() {
     );
   }
 
+  ////////////////// GVADZLEVS ERT ITEMIS INFOS DACHERSISAS
+  // const choosenItem = (id) => {
+  //   const oneProductInfo = newArrivalsData.find((product) => product.id === id);
+  //   console.log(oneProductInfo);
+  //   return oneProductInfo;
+  // };
+
   return (
     <div>
       <h2 className="text-center text-[2rem] font-semibold">New Arrivals</h2>
@@ -37,7 +44,7 @@ function NewArrivalsHero() {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-11 h-11 absolute top-[50%] left-[-50px] "
+            className="w-11 h-11 absolute top-[50%] left-[-50px] cursor-pointer hover:scale-150"
             onClick={handleTranslateBack}
           >
             <path
@@ -53,7 +60,7 @@ function NewArrivalsHero() {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-11 h-11  absolute top-[50%] right-[-50px] "
+            className="w-11 h-11  absolute top-[50%] right-[-50px] cursor-pointer hover:scale-150"
             onClick={handleTranslateForward}
           >
             <path
