@@ -1,9 +1,12 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 import { useQuery } from "react-query";
 import { getNewArrivals } from "../helpers/data";
 
 const ItemsContext = createContext();
+
 function ItemsProvider({ children }) {
+  const [clickedProduct, setClickedProduct] = useState();
+
   const {
     data: newArrivalsData,
     isError: arrivalsError,
@@ -13,9 +16,20 @@ function ItemsProvider({ children }) {
     queryFn: getNewArrivals,
   });
 
+  function choosenItem(id) {
+    const oneProductInfo = newArrivalsData.find((product) => product.id === id);
+    setClickedProduct(oneProductInfo);
+  }
+
   return (
     <ItemsContext.Provider
-      value={{ newArrivalsData, arrivalsError, arrivalsLoading }}
+      value={{
+        newArrivalsData,
+        arrivalsError,
+        arrivalsLoading,
+        choosenItem,
+        clickedProduct,
+      }}
     >
       {children}
     </ItemsContext.Provider>

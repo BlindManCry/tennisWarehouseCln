@@ -26,13 +26,6 @@ function NewArrivalsHero() {
     );
   }
 
-  ////////////////// GVADZLEVS ERT ITEMIS INFOS DACHERSISAS
-  // const choosenItem = (id) => {
-  //   const oneProductInfo = newArrivalsData.find((product) => product.id === id);
-  //   console.log(oneProductInfo);
-  //   return oneProductInfo;
-  // };
-
   return (
     <div>
       <h2 className="text-center text-[2rem] font-semibold">New Arrivals</h2>
