@@ -7,7 +7,7 @@ function NewArrivalsHero() {
 
   const { newArrivalsData } = useItems();
   const arrLength = newArrivalsData?.length;
-  console.log(arrLength);
+
   function handleTranslateBack() {
     setTranslate((state) =>
       state === 0
@@ -25,6 +25,13 @@ function NewArrivalsHero() {
         : state - 400
     );
   }
+
+  ////////////////// GVADZLEVS ERT ITEMIS INFOS DACHERSISAS
+  // const choosenItem = (id) => {
+  //   const oneProductInfo = newArrivalsData.find((product) => product.id === id);
+  //   console.log(oneProductInfo);
+  //   return oneProductInfo;
+  // };
 
   return (
     <div>

@@ -1,6 +1,9 @@
-function NewArrivalItem({ item, translate }) {
+import { Link } from "react-router-dom";
+
+function NewArrivalItem({ item, translate, choosenItem }) {
   return (
-    <div
+    <Link
+      to="/singleProduct/7"
       className={`w-[25%] min-w-[25%] px-3  transition-all
       )}`}
       style={{ transform: `translateX(${translate}%)` }}
@@ -17,7 +20,7 @@ function NewArrivalItem({ item, translate }) {
           <p>${item.newPrice.toFixed(2)}</p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 
