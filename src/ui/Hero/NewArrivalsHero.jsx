@@ -37,7 +37,7 @@ function NewArrivalsHero() {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-11 h-11 absolute top-[50%] left-[-50px] "
+            className="w-11 h-11 absolute top-[50%] left-[-50px] cursor-pointer hover:scale-150"
             onClick={handleTranslateBack}
           >
             <path
@@ -53,7 +53,7 @@ function NewArrivalsHero() {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-11 h-11  absolute top-[50%] right-[-50px] "
+            className="w-11 h-11  absolute top-[50%] right-[-50px] cursor-pointer hover:scale-150"
             onClick={handleTranslateForward}
           >
             <path

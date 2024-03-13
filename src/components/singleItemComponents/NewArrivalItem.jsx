@@ -9,14 +9,12 @@ function NewArrivalItem({ item, translate }) {
         <img
           src={item.image}
           alt=""
-          className="ml-[50%] transform translate-x-[-50%]"
+          className="ml-[50%] transform translate-x-[-50%] h-[210px]"
         />
-        <div className="flex flex-col gap-2 mt-3">
-          <p>new</p>
-          <p className="max-w-full">
-            Lacoste Men's Novak Spring Court Polo ddnwiodmiwmd
-          </p>
-          <p>$155.00</p>
+        <div className="flex flex-col justify-between gap-2 mt-3 h-[120px]">
+          <p className="text-cyan-700 font-semibold">{item.state}</p>
+          <p className="max-w-full font-bold">{item.title}</p>
+          <p>${item.newPrice.toFixed(2)}</p>
         </div>
       </div>
     </div>
