@@ -1,12 +1,16 @@
 import { Link } from "react-router-dom";
+import { useItems } from "../../Contexts/ItemsContext";
 
-function NewArrivalItem({ item, translate, choosenItem }) {
+function NewArrivalItem({ item, translate }) {
+  const { choosenItem } = useItems();
+
   return (
     <Link
-      to="/singleProduct/7"
+      to={`/singleProduct/${item.id}`}
       className={`w-[25%] min-w-[25%] px-3  transition-all
       )}`}
       style={{ transform: `translateX(${translate}%)` }}
+      onClick={() => choosenItem(item.id)}
     >
       <div className="border-[1px] border-gray-300 hover:border-black cursor-pointer p-5">
         <img
