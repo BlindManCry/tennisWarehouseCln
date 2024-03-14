@@ -6,6 +6,7 @@ const ItemsContext = createContext();
 
 function ItemsProvider({ children }) {
   const [clickedProduct, setClickedProduct] = useState();
+  const [cartItems, setCartItems] = useState([]);
 
   const {
     data: newArrivalsData,
@@ -29,6 +30,8 @@ function ItemsProvider({ children }) {
         arrivalsLoading,
         choosenItem,
         clickedProduct,
+        cartItems,
+        setCartItems,
       }}
     >
       {children}
