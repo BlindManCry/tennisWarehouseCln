@@ -3,9 +3,42 @@ import { useItems } from "../../Contexts/ItemsContext";
 
 function SingleProduct() {
   const [sizes, setSizes] = useState([]);
+  const [quantity, setQuantity] = useState(1);
+  const [choosenSize, setChoosenSize] = useState(0);
+  const [abloToAddCart, setAbleToAddCart] = useState(false);
+  const [alreadyInCart, setAlreadyInCart] = useState("");
 
-  const { clickedProduct } = useItems();
-  console.log(clickedProduct);
+  const { clickedProduct, cartItems, setCartItems } = useItems();
+  console.log(cartItems);
+
+  function handleIncreaseQuantity() {
+    setQuantity((quantity) => quantity + 1);
+  }
+
+  function handleDecreaseQuantity() {
+    if (quantity === 1) return;
+    setQuantity((quantity) => quantity - 1);
+  }
+
+  function handleAddToCart(product) {
+    try {
+      for (let i = 0; i < cartItems.length; i++) {
+        if (cartItems[i].id === product.id)
+          throw new Error("You already have this item in the cart");
+      }
+      const newObj = {
+        id: product.id,
+        image: product.image,
+        title: product.title,
+        quantity,
+        price: product.newPrice,
+        totalPrice: product.newPrice * quantity,
+      };
+      setCartItems([...cartItems, newObj]);
+    } catch (error) {
+      setAlreadyInCart(error.message);
+    }
+  }
 
   useEffect(function () {
     async function getSizes() {
@@ -35,7 +68,15 @@ function SingleProduct() {
             return (
               <p
                 key={index}
-                className="border-[1px] border-gray-400 px-5 py-3 text-center cursor-pointer"
+                className={`border-[1px] ${
+                  choosenSize === item.id
+                    ? "border-orange-500"
+                    : "border-gray-400"
+                }  px-5 py-3 text-center cursor-pointer`}
+                onClick={() => {
+                  setChoosenSize(item.id);
+                  setAbleToAddCart(true);
+                }}
               >
                 {item.size}
               </p>
@@ -44,23 +85,43 @@ function SingleProduct() {
         </div>
         <p className="mt-7 text-[0.75rem] font-semibold"> Quantity:</p>
         <div className="mt-1 flex justify-between items-center">
-          <p className="border-[1px] border-gray-600 px-5 py-2 text-center cursor-pointer">
+          <p
+            className="border-[1px] border-gray-600 px-5 py-2 text-center cursor-pointer"
+            onClick={handleDecreaseQuantity}
+          >
             -
           </p>
           <p className="w-[75%] border-y-[1px] border-gray-600 text-center px-5 py-2">
-            1
+            {quantity}
           </p>
-          <p className="border-[1px] border-gray-600 px-5 py-2 text-center cursor-pointer">
+          <p
+            className="border-[1px] border-gray-600 px-5 py-2 text-center cursor-pointer"
+            onClick={handleIncreaseQuantity}
+          >
             +
           </p>
         </div>
         <div className="mt-7">
-          <button className="w-full px-4 py-2 bg-gray-300 text-gray-400 font-semibold">
-            Add To Cart
-          </button>
-          {/* <button className="w-full px-4 py-2 bg-cyan-300 text-cyan-600 font-semibold">
-            Add To Cart
-          </button> */}
+          {!abloToAddCart ? (
+            <button
+              className="w-full px-4 py-2 bg-gray-300 text-gray-400 font-semibold"
+              disabled
+            >
+              Add To Cart
+            </button>
+          ) : (
+            <>
+              <button
+                className="w-full px-4 py-2 bg-cyan-300 text-cyan-600 font-semibold"
+                onClick={() => handleAddToCart(clickedProduct)}
+              >
+                Add To Cart
+              </button>
+              <p className="text-[0.75rem] mt-3 text-center text-red-400 font-semibold">
+                {alreadyInCart}
+              </p>
+            </>
+          )}
         </div>
       </div>
     </div>
