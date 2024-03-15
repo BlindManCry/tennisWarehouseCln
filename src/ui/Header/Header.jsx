@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import Search from "../../components/Search/Search";
+import { useState } from "react";
+import Modal from "../Modal";
 
 function Header() {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
       <div className="flex justify-center bg-orange-600 py-[7px]">
@@ -15,7 +18,7 @@ function Header() {
       </div>
 
       <div className="bg-blue-900">
-        <div className="flex justify-between w-[90%] m-auto py-3">
+        <div className="flex justify-between w-[90%] m-auto py-3 relative">
           <Link className="flex">
             <img
               src="https://media.discordapp.net/attachments/944273809568051251/1215952694942892032/tweu_5.png?ex=65fe9f31&is=65ec2a31&hm=b1dbf9b9ad496525514d3bf7a7f7b3cf8f6144e767714f91519501c57450a115&=&format=webp&quality=lossless&width=1440&height=467"
@@ -35,6 +38,7 @@ function Header() {
               strokeWidth={1.5}
               stroke="currentColor"
               className="w-6 h-6 cursor-pointer"
+              onClick={() => setIsOpen(() => true)}
             >
               <path
                 strokeLinecap="round"
@@ -44,6 +48,7 @@ function Header() {
             </svg>
           </div>
         </div>
+        {isOpen && <Modal isOpen={isOpen} setIsOpen={setIsOpen} />}
       </div>
 
       <Search />
