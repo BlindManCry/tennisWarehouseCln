@@ -3,7 +3,7 @@ import AppLayout from "./AppLayout";
 import Home from "./pages/Home/Home";
 import BabolatCategorieOverview from "./components/categoriesOverview/BabolatCategorieOverview";
 import Cart from "./pages/Cart/Cart";
-// import SingleProduct from "./pages/SingleProduct/SingleProduct";
+import SingleProduct from "./pages/SingleProduct/SingleProduct";
 
 const router = createBrowserRouter([
   {
@@ -21,10 +21,10 @@ const router = createBrowserRouter([
         path: "/cart",
         element: <Cart />,
       },
-      // {
-      //   path: "/singleProduct/:productId",
-      //   element: <SingleProduct />,
-      // },
+      {
+        path: "/singleProduct/:productId",
+        element: <SingleProduct />,
+      },
     ],
   },
 ]);

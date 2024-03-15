@@ -1,4 +1,10 @@
+import { useItems } from "../../Contexts/ItemsContext";
+
 function DisplayCartItems({ item }) {
+  const { setCartItems } = useItems();
+  function handleRemoveItem(id) {
+    setCartItems((cart) => cart.filter((item) => item.id !== id));
+  }
   return (
     <>
       <div className="mt-6 px-9 flex">
@@ -6,7 +12,10 @@ function DisplayCartItems({ item }) {
           <img src={item.image} alt="" className="w-[120px] h-[134px]" />
           <div className="w-[100%] flex flex-col gap-7 ml-9">
             <p className="font-bold">{item.title}</p>
-            <p className="text-[0.75rem] text-[#215ad0] cursor-pointer hover:underline">
+            <p
+              className="text-[0.75rem] text-[#215ad0] cursor-pointer hover:underline"
+              onClick={() => handleRemoveItem(item.id)}
+            >
               Remove
             </p>
           </div>
