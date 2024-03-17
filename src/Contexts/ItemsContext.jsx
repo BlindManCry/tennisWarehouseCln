@@ -7,7 +7,10 @@ const ItemsContext = createContext();
 function ItemsProvider({ children }) {
   const [clickedProduct, setClickedProduct] = useState();
   const [cartItems, setCartItems] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
   const [modalEnabled, setModalEnabled] = useState(false);
+  const [activeUser, setActiveUser] = useState(false);
+  const [balance, setBalance] = useState(0);
 
   const {
     data: newArrivalsData,
@@ -48,6 +51,12 @@ function ItemsProvider({ children }) {
         usersData,
         modalEnabled,
         setModalEnabled,
+        activeUser,
+        setActiveUser,
+        balance,
+        setBalance,
+        isOpen,
+        setIsOpen,
       }}
     >
       {children}

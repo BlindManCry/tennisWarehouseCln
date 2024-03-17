@@ -1,11 +1,33 @@
 import { useEffect, useState } from "react";
 import { useItems } from "../../Contexts/ItemsContext";
 import DisplayCartItems from "../../components/DisplayCart/DisplayCartItems";
+import Modal from "../../ui/Modal";
 
 function Cart() {
   const [allTotalPrice, setAllTotalPrice] = useState(0);
 
-  const { cartItems } = useItems();
+  const {
+    cartItems,
+    setCartItems,
+    activeUser,
+    setIsOpen,
+    balance,
+    setBalance,
+  } = useItems();
+  console.log(balance, allTotalPrice);
+
+  function handleCheckout() {
+    if (activeUser === false) {
+      setIsOpen(true);
+    } else {
+      if (balance >= allTotalPrice) {
+        setBalance((balance) => balance - allTotalPrice);
+        setCartItems([]);
+      } else {
+        alert("Balance is not enough!");
+      }
+    }
+  }
 
   useEffect(
     function () {
@@ -39,7 +61,10 @@ function Cart() {
               Checkout
             </button>
           ) : (
-            <button className="bg-blue-200 text-blue-600 font-semibold py-2 px-[140px]">
+            <button
+              onClick={() => handleCheckout()}
+              className="bg-blue-200 text-blue-600 font-semibold py-2 px-[140px]"
+            >
               Checkout
             </button>
           )}

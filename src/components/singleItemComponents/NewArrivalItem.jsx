@@ -3,7 +3,6 @@ import { useItems } from "../../Contexts/ItemsContext";
 
 function NewArrivalItem({ item, translate }) {
   const { choosenItem } = useItems();
-
   return (
     <Link
       to={`/singleProduct/${item.id}`}
@@ -21,7 +20,10 @@ function NewArrivalItem({ item, translate }) {
         <div className="flex flex-col justify-between gap-2 mt-3 h-[120px]">
           <p className="text-cyan-700 font-semibold">{item.state}</p>
           <p className="max-w-full font-bold">{item.title}</p>
-          <p>${item.newPrice.toFixed(2)}</p>
+          <div className="flex gap-4">
+            <p>${item.newPrice.toFixed(2)}</p>
+            {item.oldPrice && <p className="line-through">${item.oldPrice}</p>}
+          </div>
         </div>
       </div>
     </Link>

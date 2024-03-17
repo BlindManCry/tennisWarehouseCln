@@ -5,8 +5,14 @@ import Modal from "../Modal";
 import { useItems } from "../../Contexts/ItemsContext";
 
 function Header() {
-  const [isOpen, setIsOpen] = useState(false);
-  const { setModalEnabled } = useItems();
+  const {
+    setModalEnabled,
+    activeUser,
+    setActiveUser,
+    isOpen,
+    setIsOpen,
+    balance,
+  } = useItems();
 
   function handleOpenModal() {
     setModalEnabled(true);
@@ -33,26 +39,44 @@ function Header() {
               className="w-[240px]"
             />
           </Link>
-
-          <div className="flex gap-5 items-end text-[#fff]">
-            <p>📱</p>
-            <p>1.800.883.6647</p>
-            <p>Support</p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-6 h-6 cursor-pointer"
-              onClick={() => handleOpenModal()}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
-              />
-            </svg>
+          <div className="flex flex-col justify-around">
+            {activeUser && (
+              <div className="flex gap-4">
+                <p className="text-white text-[18px]">
+                  Welcome, {activeUser.username}
+                </p>
+                <p className="text-white">Balance : ${balance}</p>
+              </div>
+            )}
+            <div className="flex gap-5 items-center text-[#fff]">
+              <p>📱</p>
+              <p>1.800.883.6647</p>
+              <p>Support</p>
+              {!activeUser ? (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-6 h-6 cursor-pointer"
+                  onClick={() => handleOpenModal()}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
+                  />
+                </svg>
+              ) : (
+                <button
+                  onClick={() => setActiveUser(false)}
+                  className="border-[1px] border-red-600 bg-red-600 p-[4px] rounded-md"
+                >
+                  Log Out
+                </button>
+              )}
+            </div>
           </div>
         </div>
         {isOpen && <Modal isOpen={isOpen} setIsOpen={setIsOpen} />}

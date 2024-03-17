@@ -1,15 +1,37 @@
 import { useState } from "react";
 import { useItems } from "../Contexts/ItemsContext";
 
-function Modal({ setIsOpen }) {
+function Modal() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const { setModalEnabled, usersData } = useItems();
+  const {
+    setModalEnabled,
+    usersData,
+    activeUser,
+    setActiveUser,
+    balance,
+    setBalance,
+    isOpen,
+    setIsOpen,
+  } = useItems();
+  console.log(usersData);
 
   function handleSubmit(e) {
     e.preventDefault();
+    for (let i = 0; i < usersData.length; i++) {
+      const user = usersData[i];
+      if (user.email === email && user.password === password) {
+        setActiveUser(() => user);
+        setBalance(() => user.balance);
+        setIsOpen(() => false);
+        setModalEnabled(() => false);
+        break; // Exit loop if user is found
+      } else {
+        setActiveUser("incorrect");
+      }
+    }
   }
+  console.log(activeUser);
 
   const handleOpenModal = () => {
     setModalEnabled(false);
@@ -18,7 +40,10 @@ function Modal({ setIsOpen }) {
 
   return (
     <div className="fixed top-0 right-0 left-0 bottom-0 max-h-[100vh] z-10 backdrop-blur-sm">
-      <form className=" w-[500px] h-[550px] bg-white absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]  z-50 rounded-md">
+      <form
+        onSubmit={handleSubmit}
+        className=" w-[500px] h-[550px] bg-white absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]  z-50 rounded-md"
+      >
         <div className="flex justify-between w-[90%] mx-auto mt-4 mb-2 items-center">
           <h1 className="text-[24px] font-bold">Account Login</h1>
           <svg
@@ -58,6 +83,11 @@ function Modal({ setIsOpen }) {
             Forgot Password?
           </p>
         </div>
+        {activeUser === "incorrect" && (
+          <p className="mt-4 ml-7 text-red-500">
+            Email or password is incorrect, Try again.
+          </p>
+        )}
         <div className="flex mt-[60px] justify-between w-[90%] mx-auto mb-[50px]">
           <div className="flex bg-gray-100 w-[214px] h-[53] gap-2 p-2 ">
             <input type="checkbox" />
