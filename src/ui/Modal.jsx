@@ -1,23 +1,21 @@
 import { useState } from "react";
 import { useItems } from "../Contexts/ItemsContext";
 import ModalSignUp from "./ModalSignUp";
+import { getUsers } from "../helpers/data";
 
 function Modal() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [notAllowedLogin, setNotAllowedLogin] = useState(false);
   const [signup, setSignup] = useState(false);
-  const {
-    setModalEnabled,
-    usersData,
-    activeUser,
-    setActiveUser,
-    setBalance,
-    setIsOpen,
-  } = useItems();
+  const { setModalEnabled, activeUser, setActiveUser, setBalance, setIsOpen } =
+    useItems();
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
+
+    const usersData = await getUsers();
+
     for (let i = 0; i < usersData.length; i++) {
       const user = usersData[i];
       if (user.email === email && user.password === password) {

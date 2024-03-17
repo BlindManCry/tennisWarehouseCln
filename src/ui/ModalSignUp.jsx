@@ -8,7 +8,7 @@ function ModalSignUp() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [signIn, setSignIn] = useState(false);
-  const { setIsOpen } = useItems();
+  const { setIsOpen, usersData } = useItems();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -25,6 +25,7 @@ function ModalSignUp() {
       method: "POST",
       body: JSON.stringify(newObj),
     });
+    console.log(usersData);
   }
 
   if (signIn) return <Modal />;

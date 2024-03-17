@@ -26,8 +26,6 @@ function ItemsProvider({ children }) {
     queryFn: getUsers,
   });
 
-  console.log(usersData);
-
   function choosenItem(id) {
     const oneProductInfo = newArrivalsData.find((product) => product.id === id);
     setClickedProduct(oneProductInfo);
