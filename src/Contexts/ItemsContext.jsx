@@ -1,12 +1,13 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { useQuery } from "react-query";
-import { getNewArrivals } from "../helpers/data";
+import { getNewArrivals, getUsers } from "../helpers/data";
 
 const ItemsContext = createContext();
 
 function ItemsProvider({ children }) {
   const [clickedProduct, setClickedProduct] = useState();
   const [cartItems, setCartItems] = useState([]);
+  const [modalEnabled, setModalEnabled] = useState(false);
 
   const {
     data: newArrivalsData,
@@ -16,11 +17,23 @@ function ItemsProvider({ children }) {
     queryKey: ["newArrivals"],
     queryFn: getNewArrivals,
   });
+  const { data: usersData } = useQuery({
+    queryKey: ["users"],
+    queryFn: getUsers,
+  });
 
   function choosenItem(id) {
     const oneProductInfo = newArrivalsData.find((product) => product.id === id);
     setClickedProduct(oneProductInfo);
   }
+
+  useEffect(() => {
+    if (modalEnabled) {
+      document.getElementsByTagName("body")[0].style.overflow = "hidden";
+    } else {
+      document.getElementsByTagName("body")[0].style.overflow = "visible";
+    }
+  }, [modalEnabled]);
 
   return (
     <ItemsContext.Provider
@@ -32,6 +45,9 @@ function ItemsProvider({ children }) {
         clickedProduct,
         cartItems,
         setCartItems,
+        usersData,
+        modalEnabled,
+        setModalEnabled,
       }}
     >
       {children}

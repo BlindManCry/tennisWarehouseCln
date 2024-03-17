@@ -2,9 +2,16 @@ import { Link } from "react-router-dom";
 import Search from "../../components/Search/Search";
 import { useState } from "react";
 import Modal from "../Modal";
+import { useItems } from "../../Contexts/ItemsContext";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const { setModalEnabled } = useItems();
+
+  function handleOpenModal() {
+    setModalEnabled(true);
+    setIsOpen(true);
+  }
   return (
     <div>
       <div className="flex justify-center bg-orange-600 py-[7px]">
@@ -38,7 +45,7 @@ function Header() {
               strokeWidth={1.5}
               stroke="currentColor"
               className="w-6 h-6 cursor-pointer"
-              onClick={() => setIsOpen(() => true)}
+              onClick={() => handleOpenModal()}
             >
               <path
                 strokeLinecap="round"

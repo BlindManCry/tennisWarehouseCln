@@ -1,7 +1,24 @@
+import { useState } from "react";
+import { useItems } from "../Contexts/ItemsContext";
+
 function Modal({ setIsOpen }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const { setModalEnabled, usersData } = useItems();
+
+  function handleSubmit(e) {
+    e.preventDefault();
+  }
+
+  const handleOpenModal = () => {
+    setModalEnabled(false);
+    setIsOpen(false);
+  };
+
   return (
     <div className="fixed top-0 right-0 left-0 bottom-0 max-h-[100vh] z-10 backdrop-blur-sm">
-      <div className=" w-[500px] h-[550px] bg-white absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]  z-50 rounded-md">
+      <form className=" w-[500px] h-[550px] bg-white absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]  z-50 rounded-md">
         <div className="flex justify-between w-[90%] mx-auto mt-4 mb-2 items-center">
           <h1 className="text-[24px] font-bold">Account Login</h1>
           <svg
@@ -11,7 +28,7 @@ function Modal({ setIsOpen }) {
             strokeWidth={1.5}
             stroke="currentColor"
             className="w-6 h-6 hover:cursor-pointer"
-            onClick={() => setIsOpen(() => false)}
+            onClick={() => handleOpenModal()}
           >
             <path
               strokeLinecap="round"
@@ -24,14 +41,18 @@ function Modal({ setIsOpen }) {
         <p className="text-[20px] ml-[25px] mb-[30px]">Sign In</p>
         <div className=" flex flex-col gap-[20px] items-center relative">
           <input
-            type="text"
+            type="email"
             placeholder="Email address"
             className="border-2 border-black rounded-sm px-2 w-[90%] h-[40px]"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <input
-            type="text"
+            type="password"
             placeholder="Password"
             className="border-2 border-black rounded-sm px-2 w-[90%] h-[40px]"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
           <p className="absolute text-blue-500 text-[13px] hover:cursor-pointer hover:border-b-[1px] hover:border-blue-500 right-[25px] top-[118%]">
             Forgot Password?
@@ -56,7 +77,7 @@ function Modal({ setIsOpen }) {
             order.
           </p>
         </div>
-      </div>
+      </form>
     </div>
   );
 }

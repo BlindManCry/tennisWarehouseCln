@@ -1,0 +1,74 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "user123",
+      "email": "user123@gmail.com",
+      "password": "password123",
+      "balance": 750
+    },
+    {
+      "id": 2,
+      "username": "john_doe",
+      "email": "john_doe@gmail.com",
+      "password": "johns_password",
+      "balance": 1000
+    },
+    {
+      "id": 3,
+      "username": "jane_smith",
+      "email": "jane_smith@gmail.com",
+      "password": "janes_password",
+      "balance": 600
+    },
+    {
+      "id": 4,
+      "username": "alice",
+      "email": "alice@gmail.com",
+      "password": "alice_password",
+      "balance": 700
+    },
+    {
+      "id": 5,
+      "username": "bob",
+      "email": "bob@gmail.com",
+      "password": "bob_password",
+      "balance": 800
+    },
+    {
+      "id": 6,
+      "username": "emma",
+      "email": "emma@gmail.com",
+      "password": "emma_password",
+      "balance": 900
+    },
+    {
+      "id": 7,
+      "username": "david",
+      "email": "david@gmail.com",
+      "password": "david_password",
+      "balance": 550
+    },
+    {
+      "id": 8,
+      "username": "sarah",
+      "email": "sarah@gmail.com",
+      "password": "sarah_password",
+      "balance": 1000
+    },
+    {
+      "id": 9,
+      "username": "alex",
+      "email": "alex@gmail.com",
+      "password": "alex_password",
+      "balance": 600
+    },
+    {
+      "id": 10,
+      "username": "sam",
+      "email": "sam@gmail.com",
+      "password": "sam_password",
+      "balance": 700
+    }
+  ]
+}
