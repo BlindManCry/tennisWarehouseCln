@@ -1,44 +1,33 @@
 import { useState } from "react";
 import { useItems } from "../Contexts/ItemsContext";
-import ModalSignUp from "./ModalSignUp";
+import Modal from "./Modal";
 
-function Modal() {
+function ModalSignUp() {
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [notAllowedLogin, setNotAllowedLogin] = useState(false);
-  const [signup, setSignup] = useState(false);
-  const {
-    setModalEnabled,
-    usersData,
-    activeUser,
-    setActiveUser,
-    setBalance,
-    setIsOpen,
-  } = useItems();
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [signIn, setSignIn] = useState(false);
+  const { setIsOpen } = useItems();
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    for (let i = 0; i < usersData.length; i++) {
-      const user = usersData[i];
-      if (user.email === email && user.password === password) {
-        setActiveUser(() => user);
-        setBalance(() => user.balance);
-        setIsOpen(() => false);
-        setModalEnabled(() => false);
-        break; // Exit loop if user is found
-      } else {
-        setNotAllowedLogin(true);
-      }
-    }
+
+    const newObj = {
+      id: crypto.randomUUID(),
+      username,
+      email,
+      password,
+      balance: 1000,
+    };
+
+    await fetch("http://localhost:7000/users", {
+      method: "POST",
+      body: JSON.stringify(newObj),
+    });
   }
-  console.log(activeUser);
 
-  const handleOpenModal = () => {
-    setModalEnabled(false);
-    setIsOpen(false);
-  };
-
-  if (signup) return <ModalSignUp />;
+  if (signIn) return <Modal />;
 
   return (
     <div className="fixed top-0 right-0 left-0 bottom-0 max-h-[100vh] z-10 backdrop-blur-sm">
@@ -55,7 +44,7 @@ function Modal() {
             strokeWidth={1.5}
             stroke="currentColor"
             className="w-6 h-6 hover:cursor-pointer"
-            onClick={() => handleOpenModal()}
+            onClick={() => setIsOpen(false)}
           >
             <path
               strokeLinecap="round"
@@ -65,8 +54,15 @@ function Modal() {
           </svg>
         </div>
         <hr className="mb-[20px]"></hr>
-        <p className="text-[20px] ml-[25px] mb-[30px]">Sign In</p>
+        <p className="text-[20px] ml-[25px] mb-[30px]">Sign Up</p>
         <div className=" flex flex-col gap-[20px] items-center relative">
+          <input
+            type="text"
+            placeholder="username"
+            className="border-2 border-black rounded-sm px-2 w-[90%] h-[40px]"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
           <input
             type="email"
             placeholder="Email address"
@@ -81,31 +77,34 @@ function Modal() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          <input
+            type="password"
+            placeholder="confirm password"
+            className="border-2 border-black rounded-sm px-2 w-[90%] h-[40px]"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          />
           <p className="absolute text-blue-500 text-[13px] hover:cursor-pointer hover:border-b-[1px] hover:border-blue-500 right-[25px] top-[118%]">
             Forgot Password?
           </p>
         </div>
-        {notAllowedLogin && (
-          <p className="mt-4 ml-7 text-red-500">
-            Email or password is incorrect, Try again.
-          </p>
-        )}
+
         <div className="flex mt-[60px] justify-between w-[90%] mx-auto mb-[50px]">
           <div className="flex bg-gray-100 w-[214px] h-[53] gap-2 p-2 ">
             <input type="checkbox" />
             <p className="text-[18px]">Remember Me</p>
           </div>
           <button className="px-[30px] bg-orange-500 text-[18px] w-[214px] h-[47px] hover:cursor-pointer ">
-            Sign In
+            Sign Up
           </button>
         </div>
         <hr />
         <div className="w-[90%] mx-auto mt-[25px]">
           <h1
             className="text-[16px] font-bold text-center cursor-pointer hover:underline"
-            onClick={() => setSignup(true)}
+            onClick={() => setSignIn(true)}
           >
-            Dont Have An Account?
+            Already Have An Account?
           </h1>
           <p className="text-center">
             You can create an account during the checkout process of your next
@@ -117,4 +116,4 @@ function Modal() {
   );
 }
 
-export default Modal;
+export default ModalSignUp;

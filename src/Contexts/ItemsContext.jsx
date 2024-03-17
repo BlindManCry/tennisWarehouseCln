@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { useQuery } from "react-query";
+import { focusManager, useQuery } from "react-query";
 import { getNewArrivals, getUsers } from "../helpers/data";
 
 const ItemsContext = createContext();
@@ -20,10 +20,13 @@ function ItemsProvider({ children }) {
     queryKey: ["newArrivals"],
     queryFn: getNewArrivals,
   });
+
   const { data: usersData } = useQuery({
     queryKey: ["users"],
     queryFn: getUsers,
   });
+
+  console.log(usersData);
 
   function choosenItem(id) {
     const oneProductInfo = newArrivalsData.find((product) => product.id === id);

@@ -40,7 +40,7 @@ function Header() {
             />
           </Link>
           <div className="flex flex-col justify-around">
-            {activeUser && (
+            {Object.keys(activeUser).length !== 0 && (
               <div className="flex gap-4">
                 <p className="text-white text-[18px]">
                   Welcome, {activeUser.username}
@@ -52,7 +52,7 @@ function Header() {
               <p>📱</p>
               <p>1.800.883.6647</p>
               <p>Support</p>
-              {!activeUser ? (
+              {Object.keys(activeUser).length === 0 ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
