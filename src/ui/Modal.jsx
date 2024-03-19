@@ -8,8 +8,7 @@ function Modal() {
   const [password, setPassword] = useState("");
   const [notAllowedLogin, setNotAllowedLogin] = useState(false);
   const [signup, setSignup] = useState(false);
-  const { setModalEnabled, activeUser, setActiveUser, setBalance, setIsOpen } =
-    useItems();
+  const { setModalEnabled, setActiveUser, setBalance, setIsOpen } = useItems();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -29,7 +28,6 @@ function Modal() {
       }
     }
   }
-  console.log(activeUser);
 
   const handleOpenModal = () => {
     setModalEnabled(false);

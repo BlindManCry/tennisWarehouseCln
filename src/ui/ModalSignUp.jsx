@@ -10,8 +10,7 @@ function ModalSignUp() {
   const [signIn, setSignIn] = useState(false);
   const [isNotMatched, setIsNotMatched] = useState(false);
   const [smallPassword, setSmallPassword] = useState(false);
-  console.log(smallPassword);
-  const { setIsOpen, usersData } = useItems();
+  const { setIsOpen, setModalEnabled, setActiveUser, setBalance } = useItems();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -42,8 +41,10 @@ function ModalSignUp() {
       method: "POST",
       body: JSON.stringify(newObj),
     });
-    console.log(usersData);
     setIsOpen(false);
+    setActiveUser(() => newObj);
+    setBalance(() => 1000);
+    setModalEnabled(() => false);
   }
 
   if (signIn) return <Modal />;
